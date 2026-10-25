@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fun gaming hub for discovering games and gaming tips.">
+  <title>PixelQuest Gaming Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="PixelQuest home">🎮 PixelQuest</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#games">Games</a>
+      <a href="#features">Features</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#community">Community</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+        <h1>Level up your<br><span>gaming world.</span></h1>
+        <p class="hero-copy">Discover exciting games, explore new worlds, and find your next favorite way to play.</p>
+        <a class="button button-primary" href="#games">Explore games <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Decorative game controller illustration" role="img">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="pixel-card">✦<br>PLAY<br>MORE</div>
+        <div class="controller">🎮</div>
+        <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span>
+      </div>
+    </section>
+
+    <section class="section" id="games">
+      <div class="section-heading">
+        <div><p class="eyebrow">PICK YOUR PLAYSTYLE</p><h2>Featured games</h2></div>
+        <p>Choose a category and find your next adventure.</p>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter games">
+        <button class="filter active" data-filter="all">All games</button>
+        <button class="filter" data-filter="adventure">Adventure</button>
+        <button class="filter" data-filter="strategy">Strategy</button>
+        <button class="filter" data-filter="arcade">Arcade</button>
+      </div>
+      <div class="game-grid" id="gameGrid">
+        <article class="game-card" data-category="adventure">
+          <div class="game-art art-purple"><span>🌌</span><small>EXPLORE</small></div>
+          <div class="game-info"><span class="tag">ADVENTURE</span><h3>Cosmic Journey</h3><p>Explore strange galaxies and discover distant worlds.</p><button class="text-button details-button" data-title="Cosmic Journey" data-description="A space exploration adventure concept. Set a course for distant galaxies, discover new worlds, and create your own story.">Game details ↗</button></div>
+        </article>
+        <article class="game-card" data-category="strategy">
+          <div class="game-art art-orange"><span>🏰</span><small>PLAN</small></div>
+          <div class="game-info"><span class="tag">STRATEGY</span><h3>Kingdom Tactics</h3><p>Build your kingdom and outsmart your opponents.</p><button class="text-button details-button" data-title="Kingdom Tactics" data-description="A strategy game concept where smart planning, resource management, and teamwork help your kingdom grow.">Game details ↗</button></div>
+        </article>
+        <article class="game-card" data-category="arcade">
+          <div class="game-art art-blue"><span>🚀</span><small>GO FAST</small></div>
+          <div class="game-info"><span class="tag">ARCADE</span><h3>Neon Rush</h3><p>Race through a glowing city and beat your best score.</p><button class="text-button details-button" data-title="Neon Rush" data-description="An arcade racing game concept packed with neon lights, quick reactions, and score-chasing challenges.">Game details ↗</button></div>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No games in this category yet.</p>
+    </section>
+
+
+    <section class="section leaderboard-section" id="leaderboard">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHASE THE HIGH SCORE</p><h2>Player leaderboard</h2></div>
+        <p>Try the mini challenge, save your score on this device, and see how you rank.</p>
+      </div>
+      <div class="leaderboard-layout">
+        <div class="score-panel">
+          <span class="score-label">YOUR CURRENT SCORE</span>
+          <strong id="currentScore">0</strong>
+          <p id="challengeMessage">Tap the button to start your challenge.</p>
+          <button class="button button-primary" id="playChallenge">Play score challenge ⚡</button>
+          <form id="scoreForm" class="score-form">
+            <label for="playerName">Player name</label>
+            <div class="score-form-row">
+              <input id="playerName" name="playerName" maxlength="18" placeholder="Enter a name" required>
+              <button class="button button-primary" type="submit">Save score</button>
+            </div>
+          </form>
+          <p class="small-note">Demo leaderboard: scores are saved only in this browser, not shared online.</p>
+        </div>
+        <div class="leaderboard-table-wrap">
+          <div class="leaderboard-title-row"><h3>Top players</h3><button class="text-button" id="clearScores" type="button">Reset demo</button></div>
+          <ol class="leaderboard-list" id="leaderboardList" aria-live="polite"></ol>
+          <p class="empty-leaderboard" id="emptyLeaderboard">No scores yet. Play and add your score!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" id="features">
+      <div><p class="eyebrow">BUILT FOR PLAYERS</p><h2>More than a game.<br><span>It's your universe.</span></h2></div>
+      <div class="feature-list">
+        <div><span class="feature-icon">⚡</span><p><strong>Fresh discoveries</strong><br>Find ideas for your next play session.</p></div>
+        <div><span class="feature-icon">🧩</span><p><strong>Every playstyle</strong><br>Adventure, strategy, and arcade fun.</p></div>
+        <div><span class="feature-icon">🌟</span><p><strong>Player first</strong><br>A simple hub made for gaming fans.</p></div>
+      </div>
+    </section>
+
+    <section class="community section" id="community">
+      <p class="eyebrow">JOIN THE QUEST</p>
+      <h2>Ready, player one?</h2>
+      <p>Have an idea for a game or a feature you'd love to see? Let us know.</p>
+      <a class="button button-primary" href="mailto:hello@example.com?subject=PixelQuest%20idea">Share an idea <span aria-hidden="true">→</span></a>
+      <p class="small-note">Demo contact link — replace hello@example.com with your email address.</p>
+    </section>
+  </main>
+
+  <footer><a class="logo" href="#home">🎮 PixelQuest</a><p>Made for the love of gaming. © <span id="year"></span> PixelQuest.</p><a href="#home">Back to top ↑</a></footer>
+
+  <dialog id="gameDialog" class="game-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close dialog">×</button>
+    <p class="eyebrow">GAME PROFILE</p><h2 id="dialogTitle">Game title</h2><p id="dialogDescription"></p>
+    <button class="button button-primary" id="dialogOkay">Got it</button>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
